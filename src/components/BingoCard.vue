@@ -1,18 +1,37 @@
+<script setup>
+import BingoTile from './BingoTile.vue';
+
+const tiles = [];
+for (var i=0; i<5; i++) {
+  const row = [];
+  for (var j=1; j<=5; j++) {
+    row.push(String(5*i+j));
+  }
+  tiles.push(row);
+}
+</script>
+
 <template>
-  <div class="item">
-    <i>
-      <slot name="icon"></slot>
-    </i>
-    <div class="details">
-      <h3>
-        <slot name="heading"></slot>
-      </h3>
-      <slot></slot>
-    </div>
-  </div>
+  <table>
+  <tr v-for="row in tiles">
+  <BingoTile v-for="tile in row" :tile=tile></BingoTile>
+  </tr>
+  </table>
 </template>
 
 <style scoped>
+table {
+  place-items: center;
+  border-color: var(--primary);
+  background-color: white;
+  border-width:10pt;
+  border-style:solid;
+  min-width:50%;
+}
+tr {
+  border-color: var(--primary);
+  place-content: center;
+}
 .item {
   margin-top: 2rem;
   display: flex;
