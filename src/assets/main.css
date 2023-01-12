@@ -1,9 +1,9 @@
 :root {
   --primary: #fc12b0;
-  --secondary: #ff6cce;
+  --secondary: #fcb1e3;
   --accent: #F7F900ff;
-  --camel: #A9885Aff;
-  --dark-sienna: #310e03;
+  --accent2: #9d9aac;
+  --dark: #271a0f;
 }
 
 .theme-main {
@@ -11,16 +11,18 @@
 }
 
 .theme-dark {
+  --accent2: #271a0f;
+  --dark: #9d9aac;
   --background: #1d1d28;
 }
 
 @font-face {
-  font-family: "Comics";
+  font-family: "Bianca";
   font-weight: 400;
   font-style: normal;
   font-display: auto;
   unicode-range: U+000-5FF;
-  src: url("/fonts/Space-Comics/Space-Comics.ttf");
+  src: url("/fonts/Bianca/Bianca.otf");
 }
 
 @font-face {
@@ -34,10 +36,11 @@
 
 html,
 body {
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  min-width: 100vw;
   margin: 0;
   padding: 0;
+  background-color: var(--background);
 }
 
 * {

@@ -1,20 +1,29 @@
 <script setup>
 import BingoTile from './BingoTile.vue';
 
-const tiles = [];
-for (var i=0; i<5; i++) {
-  const row = [];
-  for (var j=1; j<=5; j++) {
-    row.push(String(5*i+j));
-  }
-  tiles.push(row);
+const tiles = [
+"Ariana Grande",
+"RuPaul laughs at something that's not funny",
+"RuPaul calls Michelle \"Squirrelfriend\"",
+"No one goes home",
+"\"But this year, there's a twist\"",
+"\"I'm coming for the crown\"",
+"Sasha Colby is referred to as a legend at least 3 times",
+"A queen is surprised by the boy looks when everyone de-drags",
+"Punny entrance line",
+"Death drop and/or splits",
+"One of the judges definitely did coke",
+"Split premier - see you next week"
+];
+while (25 > tiles.length) {
+  tiles.push("");
 }
 </script>
 
 <template>
   <table>
-  <tr v-for="row in tiles">
-  <BingoTile v-for="tile in row" :tile=tile></BingoTile>
+  <tr v-for="i in [0,1,2,3,4]">
+  <BingoTile v-for="tile in tiles.slice(5*i, 5*(i+1))" :tile=tile></BingoTile>
   </tr>
   </table>
 </template>
@@ -22,84 +31,17 @@ for (var i=0; i<5; i++) {
 <style scoped>
 table {
   place-items: center;
-  border-color: var(--primary);
-  background-color: white;
-  border-width:10pt;
-  border-style:solid;
-  min-width:50%;
-}
-tr {
-  border-color: var(--primary);
-  place-content: center;
-}
-.item {
-  margin-top: 2rem;
-  display: flex;
+  border-color: var(--dark);
+  background-color: var(--secondary);
+  border-width:5pt;
+  border-style: hidden;
+  border-radius:10pt;
+  border-collapse:collapse;
+  box-shadow: 0 0 0 5pt var(--primary);
+  max-width:75%;
+  flex:0.7;
+  margin:20pt;
+  font-family: "Bianca";
 }
 
-.details {
-  flex: 1;
-  margin-left: 1rem;
-}
-
-i {
-  display: flex;
-  place-items: center;
-  place-content: center;
-  width: 32px;
-  height: 32px;
-
-  color: var(--color-text);
-}
-
-h3 {
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin-bottom: 0.4rem;
-  color: var(--color-heading);
-}
-
-@media (min-width: 1024px) {
-  .item {
-    margin-top: 0;
-    padding: 0.4rem 0 1rem calc(var(--section-gap) / 2);
-  }
-
-  i {
-    top: calc(50% - 25px);
-    left: -26px;
-    position: absolute;
-    border: 1px solid var(--color-border);
-    background: var(--color-background);
-    border-radius: 8px;
-    width: 50px;
-    height: 50px;
-  }
-
-  .item:before {
-    content: ' ';
-    border-left: 1px solid var(--color-border);
-    position: absolute;
-    left: 0;
-    bottom: calc(50% + 25px);
-    height: calc(50% - 25px);
-  }
-
-  .item:after {
-    content: ' ';
-    border-left: 1px solid var(--color-border);
-    position: absolute;
-    left: 0;
-    top: calc(50% + 25px);
-    height: calc(50% - 25px);
-  }
-
-  .item:first-of-type:before {
-    display: none;
-  }
-
-  .item:last-of-type:after {
-    display: none;
-  }
-}
 </style>
