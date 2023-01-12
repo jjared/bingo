@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-bingo-dev-193354-authRole",
+      "UnauthRoleArn": "arn:aws:iam::642295813213:role/amplify-bingo-dev-193354-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::642295813213:role/amplify-bingo-dev-193354-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-bingo-dev-193354-deployment",
+      "UnauthRoleName": "amplify-bingo-dev-193354-unauthRole",
+      "StackName": "amplify-bingo-dev-193354",
+      "StackId": "arn:aws:cloudformation:us-west-2:642295813213:stack/amplify-bingo-dev-193354/f3c0d9d0-9229-11ed-8f83-06bfeb2126df",
+      "AmplifyAppId": "dqiaigqy2srwe"
+    }
+  }
+}
